@@ -46,6 +46,8 @@ img{max-width:100%;display:block}
 .promo-text strong{font-size:14px;font-weight:900}
 .promo-btn{display:inline-flex;align-items:center;justify-content:center;background:#000;color:var(--g1);font-family:var(--fn);font-weight:700;font-size:10px;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:6px 14px;border-radius:3px;white-space:nowrap;flex-shrink:0;border:none;cursor:pointer}
 .promo-close{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#000;font-size:14px;cursor:pointer;padding:4px;line-height:1;flex-shrink:0}
+#main-nav.promo-hidden{top:0!important}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
 /* NAV */
 .nav-l{display:flex;align-items:center;gap:12px}
 .nav-logo-svg{width:36px;height:36px;flex-shrink:0}
@@ -80,7 +82,7 @@ img{max-width:100%;display:block}
 /* HERO */
 .hero{
   min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
-  padding:80px 24px 80px;position:relative;overflow:hidden;
+  padding:calc(36px + 70px) 24px 80px!important;position:relative;overflow:hidden;
   background:radial-gradient(ellipse at 25% 80%,rgba(201,168,76,.05) 0%,transparent 500px),#070707;
 }
 .hero-inner{max-width:860px;position:relative;z-index:2}
@@ -264,6 +266,41 @@ section{padding:90px 24px;position:relative}
 .test-divider{width:36px;height:1px;background:var(--g1);margin-bottom:12px}
 .test-name{font-family:var(--fn);font-weight:700;font-size:13px;color:var(--w);margin-bottom:2px}
 .test-role{font-family:var(--fn);font-weight:400;font-size:12px;color:var(--g1)}
+/* PROMO BLOCK 2 */
+.promo2{background:linear-gradient(135deg,#0A0A0A 0%,#111111 100%);border-top:1px solid rgba(201,168,76,.3);border-bottom:1px solid rgba(201,168,76,.3);padding:60px 24px}
+.promo2-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center}
+.promo2-pill{display:inline-block;border:1px solid rgba(201,168,76,.4);border-radius:50px;padding:4px 14px;font-family:var(--fn);font-weight:600;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--g1);margin-bottom:20px}
+.promo2-title{font-family:var(--fs);font-weight:700;font-size:42px;color:var(--w);line-height:1.2;margin-bottom:4px}
+.promo2-sub{font-family:var(--fs);font-style:italic;font-weight:400;font-size:32px;color:var(--g1);margin-bottom:16px}
+.promo2-divider{width:60px;height:1px;background:var(--g1);margin-bottom:20px}
+.promo2-features{list-style:none;padding:0;margin:0}
+.promo2-features li{font-family:var(--fn);font-weight:400;font-size:14px;color:#AAA;line-height:2.2}
+.promo2-features li::before{content:'\2713';color:var(--g1);margin-right:10px;font-weight:700}
+.promo2-card{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.3);border-radius:4px;padding:40px 32px;text-align:center}
+.promo2-card-label{font-family:var(--fn);font-weight:600;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#888;margin-bottom:12px}
+.promo2-card-cross{font-family:var(--fn);font-weight:400;font-size:18px;color:#555;text-decoration:line-through;margin-bottom:4px}
+.promo2-card-price{font-family:var(--fs);font-weight:900;font-size:72px;color:var(--g1);line-height:1;text-shadow:0 0 40px rgba(201,168,76,.15);margin-bottom:4px}
+.promo2-card-unit{font-family:var(--fn);font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#888;margin-bottom:20px}
+.promo2-card-divider{width:40px;height:1px;background:rgba(201,168,76,.3);margin:0 auto 20px}
+.promo2-card-btn{display:block;width:100%;background:var(--g1);color:var(--b1);font-family:var(--fn);font-weight:700;font-size:13px;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:16px;border-radius:4px;text-align:center;transition:all .35s}
+.promo2-card-btn:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 4px 30px rgba(201,168,76,.25)}
+.promo2-card-foot{font-family:var(--fn);font-weight:400;font-style:italic;font-size:11px;color:#555;margin-top:12px}
+.promo2-card-shimmer{background:linear-gradient(90deg,transparent,rgba(201,168,76,.04),transparent);background-size:200% 100%;animation:shimmer 4s ease-in-out infinite}
+/* PROMO BLOCK 3 */
+.promo3{background:var(--g1);padding:48px 24px;text-align:center}
+.promo3-inner{max-width:860px;margin:0 auto}
+.promo3-eyebrow{font-family:var(--fn);font-weight:700;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:#000;margin-bottom:12px;animation:bounceIn 1s ease}
+@keyframes bounceIn{0%{opacity:0;transform:translateY(-10px)}60%{opacity:1;transform:translateY(2px)}100%{transform:translateY(0)}}
+.promo3-title{font-family:var(--fs);font-weight:900;font-size:56px;color:#000;line-height:1.1;margin-bottom:12px}
+.promo3-sub{font-family:var(--fn);font-weight:400;font-size:16px;color:rgba(0,0,0,.7);line-height:1.8;max-width:600px;margin:0 auto 24px}
+.promo3-stats{display:flex;justify-content:center;align-items:center;gap:0;margin-bottom:28px}
+.promo3-stat{padding:0 32px;text-align:center}
+.promo3-stat-num{font-family:var(--fs);font-weight:900;font-size:36px;color:#000;line-height:1}
+.promo3-stat-label{font-family:var(--fn);font-weight:400;font-size:12px;color:rgba(0,0,0,.6)}
+.promo3-stat-divider{width:1px;height:40px;background:rgba(0,0,0,.2)}
+.promo3-cta{display:inline-block;background:#000;color:var(--g1);font-family:var(--fn);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:18px 48px;border-radius:4px;border:1px solid transparent;transition:all .3s}
+.promo3-cta:hover{background:#111;border-color:var(--g1)}
+.promo3-foot{font-family:var(--fn);font-weight:400;font-size:12px;color:rgba(0,0,0,.6);margin-top:14px}
 /* CONTACT */
 .contact-section{background:#0D0D0D;background-image:radial-gradient(circle,rgba(201,168,76,.035) 1px,transparent 1px);background-size:28px 28px}
 .form-wrap{max-width:600px;margin:32px auto 0}
@@ -322,7 +359,7 @@ footer{background:#050505;border-top:1px solid rgba(201,168,76,.08);padding:44px
   .mobile-close{position:absolute;top:20px;right:20px;color:var(--g1);font-size:28px;background:none;border:none;cursor:pointer}
 
   /* HERO */
-  .hero{padding:70px 24px 60px}
+  .hero{padding:calc(36px + 60px) 24px 60px!important}
   .hl-l2{font-size:clamp(52px,14vw,96px)}
   .hl-l3{font-size:clamp(52px,14vw,96px)}
   .hl-l1{font-size:20px}
@@ -383,6 +420,14 @@ footer{background:#050505;border-top:1px solid rgba(201,168,76,.08);padding:44px
   .ft-ig{font-size:13px}
   .ft-bot{flex-direction:column;text-align:center;gap:8px}
 
+  .promo2-inner{grid-template-columns:1fr;gap:32px}
+  .promo2-title{font-size:32px}
+  .promo2-sub{font-size:24px}
+  .promo2-card{padding:28px 20px}
+  .promo2-card-price{font-size:52px}
+  .promo3-title{font-size:36px}
+  .promo3-stats{flex-direction:column;gap:16px}
+  .promo3-stat-divider{display:none}
   section{padding:60px 20px}
 }
 @media(max-width:480px){
@@ -403,7 +448,7 @@ footer{background:#050505;border-top:1px solid rgba(201,168,76,.08);padding:44px
 <body>
 
 <!-- PROMO BANNER -->
-<div id="promo-bar" style="position:relative;z-index:9999;width:100%;background:linear-gradient(90deg,#C9A84C,#E8C96A);">
+<div id="promo-bar" style="position:fixed!important;top:0;left:0;right:0;z-index:1001;height:36px;width:100%;background:linear-gradient(90deg,#C9A84C,#E8C96A);">
   <div class="promo-content">
     <span class="promo-star">★</span>
     <span class="promo-text">
@@ -418,7 +463,7 @@ footer{background:#050505;border-top:1px solid rgba(201,168,76,.08);padding:44px
 </div>
 
 <!-- NAV -->
-<nav id="main-nav" style="position:fixed;left:0;right:0;z-index:9998;background:rgba(7,7,7,0.97);">
+<nav id="main-nav" style="position:fixed!important;top:36px;left:0;right:0;z-index:1000;background:rgba(7,7,7,0.97);">
   <div class="nav-inner" style="display:flex;justify-content:space-between;align-items:center;padding:10px 32px;max-width:1400px;margin:0 auto;border-bottom:1px solid rgba(201,168,76,.12);">
     <a href="#" class="nav-l">
     <svg class="nav-logo-svg" viewBox="0 0 100 100" fill="none">
@@ -649,6 +694,35 @@ footer{background:#050505;border-top:1px solid rgba(201,168,76,.08);padding:44px
   </div>
 </section>
 
+<!-- PROMO BLOCK 2 -->
+<section class="promo2">
+  <div class="promo2-inner">
+    <div class="promo2-left">
+      <div class="promo2-pill">⚡ OFERTA POR TIEMPO LIMITADO</div>
+      <h2 class="promo2-title">Tu Landing Page profesional</h2>
+      <p class="promo2-sub">lista para vender desde el día 1</p>
+      <div class="promo2-divider"></div>
+      <ul class="promo2-features">
+        <li>Diseño premium personalizado</li>
+        <li>100% responsive (mobile + desktop)</li>
+        <li>Optimizada para convertir</li>
+        <li>Entrega en 7 días hábiles</li>
+      </ul>
+    </div>
+    <div class="promo2-right">
+      <div class="promo2-card promo2-card-shimmer">
+        <div class="promo2-card-label">PRECIO ESPECIAL</div>
+        <div class="promo2-card-cross">$120.000</div>
+        <div class="promo2-card-price">$70.000</div>
+        <div class="promo2-card-unit">PAGO ÚNICO</div>
+        <div class="promo2-card-divider"></div>
+        <a class="promo2-card-btn" href="https://wa.me/5492665066606?text=Hola%20Alejandro!%20Quiero%20la%20promoci%C3%B3n%20de%20la%20Landing%20Page%20por%20%2470.000%20%F0%9F%94%A5" target="_blank" rel="noopener">PEDILO YA</a>
+        <div class="promo2-card-foot">🔒 Sin costo oculto. Pago único.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- INDUSTRIES -->
 <section class="industries">
   <div class="section-inner">
@@ -862,6 +936,28 @@ footer{background:#050505;border-top:1px solid rgba(201,168,76,.08);padding:44px
   </div>
 </section>
 
+<!-- PROMO BLOCK 3 -->
+<section class="promo3">
+  <div class="promo3-inner">
+    <div class="promo3-eyebrow">NO LO DEJES PARA DESPUÉS</div>
+    <h2 class="promo3-title">¿Tu competencia ya tiene web?</h2>
+    <p class="promo3-sub">Cada día sin presencia digital es un cliente que se va a otra parte.</p>
+    <div class="promo3-stats">
+      <div class="promo3-stat">
+        <div class="promo3-stat-num">7 días</div>
+        <div class="promo3-stat-label">de entrega</div>
+      </div>
+      <div class="promo3-stat-divider"></div>
+      <div class="promo3-stat">
+        <div class="promo3-stat-num">$70.000</div>
+        <div class="promo3-stat-label">pago único</div>
+      </div>
+    </div>
+    <a class="promo3-cta" href="https://wa.me/5492665066606?text=Hola%20Alejandro!%20Quiero%20la%20promoci%C3%B3n%20de%20la%20Landing%20Page%20por%20%2470.000%20%F0%9F%94%A5" target="_blank" rel="noopener">QUIERO MI LANDING PAGE AHORA</a>
+    <div class="promo3-foot">✓ Respondemos en menos de 1 hora</div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact-section" id="contacto">
   <div class="section-inner">
@@ -1018,20 +1114,10 @@ const co=new IntersectionObserver(entries=>{
 },{threshold:.5});
 counters.forEach(c=>co.observe(c));
 
-function updateNavPosition(){
-  const promo=document.getElementById('promo-bar');
-  const nav=document.getElementById('main-nav');
-  if(!promo||!nav)return;
-  const promoRect=promo.getBoundingClientRect();
-  const promoVisible=promoRect.bottom>0?promoRect.bottom:0;
-  nav.style.top=promoVisible+'px';
-}
-window.addEventListener('scroll',updateNavPosition);
-window.addEventListener('load',updateNavPosition);
-updateNavPosition();
 document.querySelector('.promo-close').addEventListener('click',function(){
   document.getElementById('promo-bar').style.display='none';
-  document.getElementById('main-nav').style.top='0px';
+  document.getElementById('main-nav').style.top='0';
+  document.getElementById('main-nav').classList.add('promo-hidden');
 });
 
 document.getElementById('waBtn').addEventListener('click',function(){

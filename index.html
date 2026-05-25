@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alejandro Perez · Community Manager</title>
+<meta name="description" content="Soluciones digitales completas para hacer crecer tu marca. Páginas web, diseño, redes sociales y Meta Ads.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --b1:#080808;--b2:#0F0F0F;--b3:#111111;--b7:#050505;
+  --g1:#C9A84C;--g2:#D4A843;--g3:#E8C96A;
+  --w:#FFFFFF;
+  --fs:'Cormorant Garamond',serif;
+  --fn:'Montserrat',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--fn);background:var(--b1);color:var(--w);
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;
+  position:relative;
+}
+body::before{
+  content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:9999;opacity:.032;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size:180px 180px;
+}
+::selection{background:var(--g1);color:var(--b1)}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--b1)}
+::-webkit-scrollbar-thumb{background:var(--g1);border-radius:2px}
+::-webkit-scrollbar-thumb:hover{background:var(--g2)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+/* PROMO BANNER */
+.promo-bar{
+  position:fixed;top:0;left:0;right:0;z-index:1001;
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  height:44px;padding:0 16px;
+  background:linear-gradient(90deg,var(--g1),var(--g3));
+  transition:transform .3s ease;
+}
+.promo-bar.hidden{transform:translateY(-100%)}
+.promo-icon svg{width:16px;height:16px;fill:#000}
+.promo-text{font-family:var(--fn);font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#000;white-space:nowrap}
+.promo-divider{width:1px;height:16px;background:rgba(0,0,0,.2)}
+.promo-body{font-family:var(--fn);font-weight:500;font-size:11px;color:#000;white-space:nowrap}
+.promo-price{font-family:var(--fn);font-weight:900;font-size:16px;color:#000;animation:pulsePrice 2s ease infinite}
+@keyframes pulsePrice{0%,100%{opacity:1}50%{opacity:.65}}
+.promo-small{font-family:var(--fn);font-weight:500;font-size:10px;letter-spacing:.15em;color:#000;white-space:nowrap}
+.promo-cta{background:#000;color:var(--g1);border:1px solid #000;font-family:var(--fn);font-weight:700;font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:6px 16px;border-radius:3px;cursor:pointer;margin:0 12px;text-decoration:none;white-space:nowrap;transition:all .2s}
+.promo-cta:hover{background:#111;border-color:var(--g1)}
+.promo-close{font-family:var(--fn);font-weight:700;font-size:14px;color:#000;cursor:pointer;background:none;border:none;padding:0 12px;line-height:1;transition:opacity .3s}
+.promo-close:hover{opacity:.6}
+/* NAV */
+.nav-wrap{
+  position:fixed;top:44px;left:0;right:0;z-index:1000;
+  transform:translateY(calc(-100% - 44px));
+  animation:navSlide .5s ease .1s forwards;
+  transition:top .3s ease;
+}
+.nav-wrap.promo-hidden{top:0}
+@keyframes navSlide{to{transform:translateY(0)}}
+.navbar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 32px;max-width:1400px;margin:0 auto;
+  background:rgba(7,7,7,.97);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(201,168,76,.12);
+}
+.nav-l{display:flex;align-items:center;gap:12px}
+.nav-logo-svg{width:36px;height:36px;flex-shrink:0}
+.nav-txt{line-height:1.2}
+.nav-name{font-family:var(--fn);font-weight:700;font-size:13px;letter-spacing:.15em;color:var(--w)}
+.nav-role{font-family:var(--fn);font-weight:500;font-size:10px;letter-spacing:.3em;color:var(--g1)}
+.nav-r{display:flex;align-items:center;gap:20px}
+.nav-links{display:flex;gap:20px}
+.nav-links a{font-family:var(--fn);font-weight:500;font-size:11px;letter-spacing:.1em;color:#999;transition:color .3s}
+.nav-links a:hover{color:var(--g1)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--g1);color:var(--b1);font-family:var(--fn);font-weight:700;
+  font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+  padding:10px 22px;border-radius:4px;border:none;cursor:pointer;transition:all .3s;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--g3);transform:translateY(-2px);box-shadow:0 4px 24px rgba(201,168,76,.25)}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none;padding:4px;z-index:1001}
+.hamburger span{display:block;width:22px;height:2px;background:var(--w);border-radius:2px;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+.mobile-menu{
+  display:none;position:fixed;inset:0;background:rgba(5,5,5,.98);backdrop-filter:blur(24px);
+  z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  opacity:0;pointer-events:none;transition:opacity .4s;
+}
+.mobile-menu.open{opacity:1;pointer-events:all}
+.mobile-menu a{font-family:var(--fs);font-size:28px;color:var(--w);letter-spacing:2px;transition:color .3s}
+.mobile-menu a:hover{color:var(--g1)}
+.mobile-close{position:absolute;top:20px;right:24px;background:none;border:none;color:var(--w);font-size:28px;cursor:pointer}
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:120px 24px 80px;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 25% 80%,rgba(201,168,76,.05) 0%,transparent 500px),#070707;
+}
+.hero-inner{max-width:860px;position:relative;z-index:2}
+.hero-pill{
+  display:inline-block;border:1px solid rgba(201,168,76,.3);border-radius:50px;
+  padding:6px 18px;font-family:var(--fn);font-weight:500;font-size:11px;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--g1);margin-bottom:28px;
+}
+.hl{overflow:hidden}
+.hl-line{display:block;opacity:0;transform:translateY(50px);animation:hlFade .7s ease forwards}
+.hl-line:nth-child(1){animation-delay:.15s}
+.hl-line:nth-child(2){animation-delay:.4s}
+.hl-line:nth-child(3){animation-delay:.65s}
+@keyframes hlFade{to{opacity:1;transform:translateY(0)}}
+.hl-l1{font-family:var(--fn);font-weight:400;font-style:italic;font-size:clamp(20px,2.5vw,28px);color:var(--g3);margin-bottom:6px}
+.hl-l2{font-family:var(--fs);font-weight:900;font-size:clamp(48px,10vw,96px);color:var(--w);line-height:.95;letter-spacing:-2px}
+.hl-l3{font-family:var(--fs);font-weight:900;font-size:clamp(48px,10vw,96px);color:var(--g1);line-height:.95;letter-spacing:-2px}
+.hero-divider{width:120px;height:1px;background:var(--g1);margin:22px auto;opacity:.7}
+.hero-sub{font-family:var(--fn);font-weight:500;font-size:12px;letter-spacing:.3em;color:#888;margin-bottom:14px}
+.hero-desc{font-family:var(--fn);font-weight:400;font-size:16px;color:#AAA;line-height:1.9;max-width:540px;margin:0 auto 32px}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--g1);color:var(--b1);font-family:var(--fn);font-weight:700;
+  font-size:12px;letter-spacing:.15em;text-transform:uppercase;
+  padding:18px 40px;border:none;border-radius:4px;cursor:pointer;transition:all .35s;
+}
+.hero-cta:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 6px 40px rgba(201,168,76,.3)}
+.hero-footnote{font-family:var(--fn);font-weight:400;font-style:italic;font-size:12px;color:#777;margin-top:14px}
+.scroll-indicator{
+  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  animation:fadeIn 1s ease 1.5s forwards;opacity:0;
+}
+@keyframes fadeIn{to{opacity:1}}
+.scroll-indicator span{font-family:var(--fn);font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:#888}
+.scroll-chevron{width:16px;height:16px;border-right:1.5px solid var(--g1);border-bottom:1.5px solid var(--g1);transform:rotate(45deg);animation:chevBounce 2s infinite}
+@keyframes chevBounce{0%,100%{transform:rotate(45deg) translate(0,0)}50%{transform:rotate(45deg) translate(4px,4px)}}
+/* SECTIONS */
+section{padding:90px 24px;position:relative}
+.section-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.section-pill{
+  display:inline-block;border:1px solid rgba(201,168,76,.25);border-radius:50px;
+  padding:5px 16px;font-family:var(--fn);font-weight:500;font-size:10px;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--g1);margin-bottom:16px;
+}
+.section-title{
+  font-family:var(--fs);font-weight:700;font-size:clamp(30px,4.5vw,48px);
+  color:var(--w);line-height:1.15;margin-bottom:12px;
+}
+.section-title span{color:var(--g1)}
+.section-sub{
+  font-family:var(--fn);font-weight:400;font-size:15px;color:#AAA;max-width:600px;
+}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(40px);transition:all .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}
+.reveal-d2{transition-delay:.2s}
+.reveal-d3{transition-delay:.3s}
+/* SOCIAL PROOF */
+.social-proof{background:#0D0D0D;padding:44px 24px;border-top:1px solid rgba(201,168,76,.08);border-bottom:1px solid rgba(201,168,76,.08);overflow:hidden}
+.sp-label{text-align:center;font-family:var(--fn);font-weight:500;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:#555;margin-bottom:24px}
+.marquee-wrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#fff 4%,#fff 96%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#fff 4%,#fff 96%,transparent)}
+.marquee-inner{display:flex;align-items:center;width:max-content;animation:marquee 90s linear infinite}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-item{font-family:var(--fn);font-weight:700;font-size:15px;letter-spacing:.25em;text-transform:uppercase;color:#777;white-space:nowrap;transition:color .3s;cursor:default;padding:0 24px}
+.marquee-item:hover{color:var(--g1)}
+.marquee-dot{color:rgba(201,168,76,.5);font-size:12px;user-select:none}
+.sp-stat{text-align:center;font-family:var(--fn);font-weight:400;font-size:12px;letter-spacing:.2em;color:#666;margin-top:20px}
+/* PAIN POINTS */
+.pain-points{background:#0A0A0A}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.pain-card{
+  background:var(--b3);border:1px solid rgba(255,255,255,.05);border-radius:4px;
+  padding:28px;transition:all .3s;
+}
+.pain-card:hover{border-color:rgba(201,168,76,.25);transform:translateY(-4px)}
+.pain-icon{width:24px;height:24px;color:var(--g1);margin-bottom:14px}
+.pain-card h4{font-family:var(--fn);font-weight:700;font-size:13px;letter-spacing:.1em;color:var(--w);margin-bottom:8px}
+.pain-card p{font-family:var(--fn);font-weight:400;font-size:13px;color:#AAA;line-height:1.8}
+/* SERVICES */
+.services{background:#070707;background-image:radial-gradient(circle,rgba(201,168,76,.035) 1px,transparent 1px);background-size:28px 28px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.service-card{
+  background:var(--b3);border:1px solid rgba(201,168,76,.12);border-radius:4px;
+  padding:36px 28px;transition:all .35s;position:relative;
+}
+.service-card::before{content:'';position:absolute;top:-1px;left:10%;right:10%;height:2px;background:var(--g1);opacity:0;transform:scaleX(0);transition:all .4s}
+.service-card:hover::before{opacity:1;transform:scaleX(1)}
+.service-card:hover{transform:translateY(-8px);border-color:rgba(201,168,76,.35);box-shadow:0 16px 40px rgba(201,168,76,.06)}
+.service-icon{width:36px;height:36px;color:var(--g1);margin-bottom:18px}
+.service-card h3{font-family:var(--fn);font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--w);margin-bottom:12px}
+.service-divider{width:36px;height:1px;background:var(--g1);margin:0 0 16px}
+.service-card ul{list-style:none;padding:0}
+.service-card ul li{font-family:var(--fn);font-weight:400;font-size:13px;color:#AAA;line-height:2;padding-left:16px;position:relative}
+.service-card ul li::before{content:'—';position:absolute;left:0;color:var(--g1)}
+/* PORTFOLIO */
+.portfolio{background:#070707;background-image:radial-gradient(circle,rgba(201,168,76,.035) 1px,transparent 1px);background-size:28px 28px}
+.portfolio-sub{font-family:var(--fn);font-weight:400;font-size:15px;color:#AAA;margin-bottom:36px}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.portfolio-card{
+  background:var(--b3);border:1px solid rgba(201,168,76,.12);border-radius:4px;
+  overflow:hidden;cursor:pointer;transition:transform .3s,border-color .3s;
+}
+.portfolio-card:hover{transform:translateY(-10px);border-color:rgba(201,168,76,.5);box-shadow:0 20px 50px rgba(201,168,76,.08)}
+.portfolio-thumb{
+  height:220px;overflow:hidden;position:relative;background:var(--b2);
+}
+.portfolio-thumb img{
+  width:100%;height:100%;object-fit:cover;object-position:top center;
+  display:block;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges;
+  filter:brightness(.85);transition:filter .4s,transform .4s;
+}
+.portfolio-card:hover .portfolio-thumb img{filter:brightness(1);transform:scale(1.04)}
+.portfolio-thumb-overlay{
+  position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(transparent 60%,#111 100%);
+}
+.portfolio-body{padding:24px 20px}
+.portfolio-main-tag{
+  display:inline-block;border:1px solid rgba(201,168,76,.3);border-radius:2px;
+  padding:4px 12px;font-family:var(--fn);font-weight:500;font-size:10px;
+  letter-spacing:.15em;color:var(--g1);
+}
+.portfolio-body h4{font-family:var(--fn);font-weight:700;font-size:14px;letter-spacing:.15em;text-transform:uppercase;color:var(--w);margin-top:10px;margin-bottom:0}
+.portfolio-body p{font-family:var(--fn);font-weight:400;font-size:13px;color:#AAA;line-height:1.8;margin-top:8px;margin-bottom:0}
+.portfolio-body-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+.portfolio-extra-tags{display:flex;flex-wrap:wrap;gap:6px}
+.portfolio-tag{
+  border:1px solid rgba(201,168,76,.25);border-radius:2px;
+  padding:4px 10px;font-family:var(--fn);font-weight:500;font-size:10px;color:var(--g1);
+}
+.portfolio-link{
+  font-family:var(--fn);font-weight:600;font-size:11px;
+  letter-spacing:.2em;color:var(--g1);text-decoration:none;white-space:nowrap;
+}
+.portfolio-link:hover{text-decoration:underline}
+/* INDUSTRIES */
+.industries{background:#0D0D0D}
+.industries-sub{font-family:var(--fn);font-weight:400;font-size:14px;color:#AAA;margin-bottom:36px}
+.industry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.industry-card{
+  background:var(--b2);border:1px solid rgba(201,168,76,.1);border-radius:4px;
+  padding:24px 28px;transition:all .3s;position:relative;
+}
+.industry-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-4px)}
+.industry-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.industry-icon{width:24px;height:24px;color:var(--g1);flex-shrink:0}
+.industry-badge{
+  font-family:var(--fn);font-weight:500;font-size:10px;color:var(--g1);
+  border:1px solid rgba(201,168,76,.3);padding:4px 10px;border-radius:2px;white-space:nowrap;
+}
+.industry-card h4{font-family:var(--fn);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--w);margin-bottom:10px}
+.industry-divider{width:36px;height:1px;background:var(--g1);margin:0 0 10px}
+.industry-card p{font-family:var(--fn);font-weight:400;font-size:12px;color:#999;line-height:1.9}
+/* PROCESS */
+.process{background:#0A0A0A}
+.process-sub{font-family:var(--fn);font-weight:400;font-size:15px;color:#AAA;margin-bottom:44px}
+.process-timeline{display:flex;gap:0;position:relative;justify-content:space-between}
+.process-step{flex:1;text-align:center;padding:0 12px;position:relative}
+.process-step:not(:last-child)::after{content:'→';position:absolute;right:-8px;top:30px;font-family:var(--fn);font-weight:400;font-size:18px;color:rgba(201,168,76,.4)}
+.process-num{font-family:var(--fs);font-weight:900;font-size:64px;color:rgba(201,168,76,.12);line-height:1;margin-bottom:-12px}
+.process-icon{width:22px;height:22px;color:var(--g1);margin:0 auto 8px}
+.process-step h4{font-family:var(--fn);font-weight:700;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--w);margin-bottom:6px}
+.process-step p{font-family:var(--fn);font-weight:400;font-size:13px;color:#AAA;line-height:2;max-width:160px;margin:0 auto}
+/* METRICS */
+.metrics{padding:56px 24px;background:#111;border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1)}
+.metrics-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.metric-item{text-align:center;padding:20px;position:relative}
+.metric-item+.metric-item{border-left:1px solid rgba(201,168,76,.1)}
+.metric-num{font-family:var(--fs);font-weight:900;font-size:clamp(42px,5vw,72px);color:var(--w);line-height:1}
+.metric-num span{color:var(--g1)}
+.metric-lbl{font-family:var(--fn);font-weight:600;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--g1);margin-top:8px}
+/* TESTIMONIALS */
+.testimonials{background:#0A0A0A}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.test-card{background:var(--b3);border:1px solid rgba(201,168,76,.1);border-radius:4px;padding:32px;position:relative;transition:all .3s}
+.test-card:hover{transform:translateY(-6px);border-color:rgba(201,168,76,.25)}
+.test-quote{font-family:var(--fs);font-weight:900;font-size:72px;color:rgba(201,168,76,.15);line-height:.6;margin-bottom:4px;position:absolute;top:16px;left:20px;pointer-events:none}
+.test-text{font-family:var(--fn);font-weight:400;font-style:italic;font-size:15px;color:#CCC;line-height:1.9;margin-bottom:20px;position:relative;z-index:1}
+.test-divider{width:36px;height:1px;background:var(--g1);margin-bottom:12px}
+.test-name{font-family:var(--fn);font-weight:700;font-size:13px;color:var(--w);margin-bottom:2px}
+.test-role{font-family:var(--fn);font-weight:400;font-size:12px;color:var(--g1)}
+/* CONTACT */
+.contact-section{background:#0D0D0D;background-image:radial-gradient(circle,rgba(201,168,76,.035) 1px,transparent 1px);background-size:28px 28px}
+.form-wrap{max-width:600px;margin:32px auto 0}
+.frm-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.frm-group{margin-bottom:16px}
+.frm-group label{display:block;font-family:var(--fn);font-weight:500;font-size:11px;letter-spacing:.05em;color:#AAA;margin-bottom:6px}
+.frm-group input,.frm-group select,.frm-group textarea{width:100%;background:var(--b2);border:1px solid #1E1E1E;border-radius:4px;padding:14px 18px;font-family:var(--fn);font-weight:400;font-size:14px;color:var(--w);transition:border-color .3s;outline:none}
+.frm-group input:focus,.frm-group select:focus,.frm-group textarea:focus{border-color:var(--g1)}
+.frm-group input::placeholder,.frm-group textarea::placeholder{color:#555}
+.frm-group select option{background:var(--b2);color:var(--w)}
+.contact-alt{margin-top:28px}
+.contact-btns{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.contact-wa-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#25D366;color:#FFF;font-family:var(--fn);font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;padding:18px;border:none;border-radius:4px;cursor:pointer;transition:all .35s}
+.contact-wa-btn:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 4px 24px rgba(37,211,102,.3)}
+.contact-wa-btn svg{width:18px;height:18px;fill:#FFF;flex-shrink:0}
+.contact-alt-ig{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:transparent;border:1px solid rgba(201,168,76,.3);color:var(--g1);padding:14px 18px;border-radius:4px;font-family:var(--fn);font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .35s;text-decoration:none}
+.contact-alt-ig:hover{background:rgba(201,168,76,.08);transform:translateY(-2px)}
+.contact-alt-ig svg{width:16px;height:16px;fill:currentColor;flex-shrink:0}
+/* FOOTER */
+footer{background:#050505;border-top:1px solid rgba(201,168,76,.08);padding:44px 24px 24px}
+.ft-inner{max-width:1100px;margin:0 auto}
+.ft-main{display:grid;grid-template-columns:1fr auto 1fr;gap:32px;align-items:center;margin-bottom:28px}
+.ft-brand{display:flex;align-items:center;gap:10px}
+.ft-brand svg{width:24px;height:24px;flex-shrink:0}
+.ft-brand-txt{line-height:1.2}
+.ft-brand-name{font-family:var(--fn);font-weight:700;font-size:12px;letter-spacing:.15em;color:var(--w)}
+.ft-brand-role{font-family:var(--fn);font-weight:500;font-size:10px;letter-spacing:.3em;color:var(--g1)}
+.ft-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.ft-links a{font-family:var(--fn);font-weight:400;font-size:11px;color:#777;letter-spacing:.15em;transition:color .3s}
+.ft-links a:hover{color:var(--g1)}
+.ft-contact{text-align:right}
+.ft-phone{font-family:var(--fn);font-weight:600;font-size:13px;color:var(--g1)}
+.ft-ig{font-family:var(--fn);font-weight:400;font-size:12px;color:#777;margin-top:2px}
+.ft-bot{border-top:1px solid rgba(255,255,255,.04);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.ft-bot p{font-family:var(--fn);font-weight:400;font-size:11px;color:#444}
+.ft-bot-tag{font-family:var(--fs);font-style:italic;font-weight:400;font-size:13px;color:var(--g1)}
+/* RESPONSIVE */
+@media(max-width:1200px){
+  .process-timeline{flex-wrap:wrap;gap:32px;justify-content:center}
+  .process-step{flex:0 0 30%}
+  .process-step:not(:last-child)::after{display:none}
+  .industry-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .mobile-menu{display:flex}
+  .hero{padding:100px 20px 60px}
+  .hl-l2,.hl-l3{font-size:clamp(36px,14vw,56px)}
+  .pain-grid,.services-grid,.portfolio-grid,.test-grid{grid-template-columns:1fr}
+  .industry-grid{grid-template-columns:1fr}
+  .process-timeline{flex-direction:column;gap:24px}
+  .process-step{flex:0 0 100%;display:flex;gap:16px;text-align:left;align-items:flex-start;padding:0}
+  .process-step .process-num{font-size:40px;margin-bottom:0;min-width:40px}
+  .process-step .process-icon{margin:0;width:22px;height:22px}
+  .process-step p{max-width:none}
+  .process-step:not(:last-child)::after{display:none}
+  .metrics-inner{grid-template-columns:repeat(2,1fr)}
+  .metric-item:nth-child(2){border-left:none}
+  .metric-item:nth-child(3){border-left:0;border-top:1px solid rgba(201,168,76,.1)}
+  .metric-item:nth-child(4){border-top:1px solid rgba(201,168,76,.1)}
+  .frm-row{grid-template-columns:1fr}
+  .ft-main{grid-template-columns:1fr;text-align:center;gap:20px}
+  .ft-contact{text-align:center}
+  .ft-bot{flex-direction:column;text-align:center}
+  section{padding:60px 20px}
+
+}
+@media(max-width:480px){
+  .navbar{padding:8px 16px}
+  .nav-logo-svg{width:28px;height:28px}
+  .nav-role{display:none}
+  .metrics-inner{grid-template-columns:1fr}
+  .metric-item+.metric-item{border-left:none;border-top:1px solid rgba(201,168,76,.1)}
+}
+</style>
+</head>
+<body>
+
+<!-- PROMO BANNER -->
+<div class="promo-bar" id="promoBar">
+  <span class="promo-icon">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="#000"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+  </span>
+  <span class="promo-text">SUPER PROMOCIÓN POR TIEMPO LIMITADO</span>
+  <span class="promo-divider"></span>
+  <span class="promo-body">TU LANDING PAGE A SOLO</span>
+  <span class="promo-price">$70.000</span>
+  <span class="promo-small">PAGO ÚNICO</span>
+  <a href="https://wa.me/5492665066606?text=Hola%20Alejandro!%20Quiero%20la%20promoci%C3%B3n%20de%20la%20Landing%20Page%20por%20%2470.000%20%F0%9F%94%A5" target="_blank" rel="noopener" class="promo-cta">PEDILO YA</a>
+  <button class="promo-close" id="promoClose">&#x2715;</button>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrap" id="navWrap"><nav class="navbar">
+  <a href="#" class="nav-l">
+    <svg class="nav-logo-svg" viewBox="0 0 100 100" fill="none">
+      <rect x="8" y="8" width="84" height="84" rx="6" stroke="rgba(201,168,76,.15)" stroke-width="1" fill="none"/>
+      <text x="50" y="62" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="52" font-weight="700" fill="#fff">AP</text>
+      <g opacity=".5">
+        <rect x="18" y="20" width="3" height="3" fill="#C9A84C"/>
+        <rect x="30" y="16" width="2" height="2" fill="#C9A84C"/>
+        <rect x="14" y="28" width="2" height="2" fill="#C9A84C"/>
+        <rect x="24" y="13" width="2" height="2" fill="#C9A84C"/>
+      </g>
+      <circle cx="44" cy="44" r="2.5" fill="#C9A84C"/>
+    </svg>
+    <div class="nav-txt">
+      <div class="nav-name">ALEJANDRO PEREZ</div>
+      <div class="nav-role">COMMUNITY MANAGER</div>
+    </div>
+  </a>
+  <div class="nav-r">
+    <div class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a href="#contacto" class="nav-cta">SOLICITAR CONSULTA</a>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav></div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="#servicios">Servicios</a>
+  <a href="#proceso">Proceso</a>
+  <a href="#contacto">Contacto</a>
+  <a href="#contacto" style="color:var(--g1)">Solicitar Consulta</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-pill reveal">COMMUNITY MANAGER · MARKETING DIGITAL</div>
+    <div class="hl">
+      <span class="hl-line"><span class="hl-l1">Hacemos crecer</span></span>
+      <span class="hl-line"><span class="hl-l2">TU MARCA</span></span>
+      <span class="hl-line"><span class="hl-l3">EN DIGITAL</span></span>
+    </div>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Estrategia · Diseño · Resultados</p>
+    <p class="hero-desc">Soluciones digitales completas para destacar, conectar y vender.</p>
+    <a href="#contacto" class="hero-cta">SOLICITAR CONSULTA GRATIS</a>
+    <p class="hero-footnote">Sin costo. Sin compromiso. 100% personalizado.</p>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-chevron"></div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof reveal">
+  <div class="section-inner">
+    <p class="sp-label">MARCAS QUE CONFIARON EN MÍ</p>
+    <div class="marquee-wrap">
+      <div class="marquee-inner" id="marqueeInner"></div>
+    </div>
+    <p class="sp-stat">+60 marcas gestionadas en múltiples rubros</p>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain-points" id="problema">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-pill">EL PROBLEMA</div>
+      <h2 class="section-title" style="max-width:640px">Cuando tu marca no crece como debería</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal reveal-d1">
+        <svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <h4>Sin presencia digital sólida</h4>
+        <p>Tu competencia aparece primero y tus clientes potenciales no te encuentran.</p>
+      </div>
+      <div class="pain-card reveal reveal-d1">
+        <svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+        <h4>Seguidores que no compran</h4>
+        <p>Tenés likes pero no conversiones. El engagement no se traduce en ventas.</p>
+      </div>
+      <div class="pain-card reveal reveal-d2">
+        <svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        <h4>Sin estrategia definida</h4>
+        <p>Publicás sin un plan claro y los resultados son inconsistentes.</p>
+      </div>
+      <div class="pain-card reveal reveal-d2">
+        <svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <h4>Tiempo perdido en contenido</h4>
+        <p>Creás contenido manualmente sin sistema ni calendario editorial.</p>
+      </div>
+      <div class="pain-card reveal reveal-d3">
+        <svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        <h4>Inversión en ads sin retorno</h4>
+        <p>Gastás en publicidad pero no sabés qué funciona y qué no.</p>
+      </div>
+      <div class="pain-card reveal reveal-d3">
+        <svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <h4>Mensaje que no conecta</h4>
+        <p>Tu comunicación no refleja el valor real de tu marca.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="servicios">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-pill">MIS SERVICIOS</div>
+      <h2 class="section-title">Todo lo que tu marca necesita para crecer</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-d1">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <h3>Páginas Web</h3>
+        <div class="service-divider"></div>
+        <ul>
+          <li>Landing Pages de alta conversión</li>
+          <li>Sitios Ecommerce</li>
+          <li>Páginas Corporativas</li>
+          <li>Blogs y portales de noticias</li>
+          <li>Sitios educativos</li>
+        </ul>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <h3>Flyers &amp; Reels</h3>
+        <div class="service-divider"></div>
+        <ul>
+          <li>Diseño profesional para redes sociales</li>
+          <li>Reels y contenido video</li>
+          <li>Identidad visual consistente</li>
+          <li>Piezas para campañas y promociones</li>
+        </ul>
+      </div>
+      <div class="service-card reveal reveal-d3">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        <h3>Campañas Meta Ads</h3>
+        <div class="service-divider"></div>
+        <ul>
+          <li>Reconocimiento de marca</li>
+          <li>Tráfico calificado</li>
+          <li>Generación de clientes potenciales</li>
+          <li>Retargeting y conversión</li>
+          <li>Campañas de ventas directas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-pill">PORTAFOLIO</div>
+      <h2 class="section-title">Páginas web que creamos</h2>
+      <p class="portfolio-sub">Diseño profesional, rápido y orientado a convertir.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal reveal-d1" onclick="window.open('https://www.reparacionessimplesdelhogar.com.ar','_blank')">
+        <div class="portfolio-thumb">
+          <img src="screenshots/reparaciones-simples-delhogar.png" alt="Reparaciones Simples del Hogar">
+          <div class="portfolio-thumb-overlay"></div>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-main-tag">SITIO WEB</span>
+          <h4>Reparaciones Simples del Hogar</h4>
+          <p>Asistente con IA para reparaciones del hogar. Plomería, electricidad, gas y humedad resueltos paso a paso.</p>
+          <div class="portfolio-body-bottom">
+            <div class="portfolio-extra-tags">
+              <span class="portfolio-tag">IA</span>
+              <span class="portfolio-tag">Blog</span>
+              <span class="portfolio-tag">Herramientas</span>
+            </div>
+            <a class="portfolio-link" href="https://www.reparacionessimplesdelhogar.com.ar" target="_blank" rel="noopener">VER SITIO →</a>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-d2" onclick="window.open('https://selah-vida.vercel.app','_blank')">
+        <div class="portfolio-thumb">
+          <img src="screenshots/selah-vida.png" alt="Selah Vida">
+          <div class="portfolio-thumb-overlay"></div>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-main-tag">APP WEB</span>
+          <h4>Selah Vida</h4>
+          <p>Plataforma espiritual con contenido bíblico, música de alabanza y oraciones guiadas.</p>
+          <div class="portfolio-body-bottom">
+            <div class="portfolio-extra-tags">
+              <span class="portfolio-tag">React</span>
+              <span class="portfolio-tag">Diseño Premium</span>
+            </div>
+            <a class="portfolio-link" href="https://selah-vida.vercel.app" target="_blank" rel="noopener">VER SITIO →</a>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card reveal reveal-d3" onclick="window.open('https://shammah-bebe.vercel.app','_blank')">
+        <div class="portfolio-thumb">
+          <img src="screenshots/shammah-bebe.png" alt="Shammah">
+          <div class="portfolio-thumb-overlay"></div>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-main-tag">ECOMMERCE</span>
+          <h4>Shammah</h4>
+          <p>Sitio para marca de indumentaria y productos para bebés con catálogo visual y contacto directo.</p>
+          <div class="portfolio-body-bottom">
+            <div class="portfolio-extra-tags">
+              <span class="portfolio-tag">Branding</span>
+              <span class="portfolio-tag">Catálogo</span>
+            </div>
+            <a class="portfolio-link" href="https://shammah-bebe.vercel.app" target="_blank" rel="noopener">VER SITIO →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="industries">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-pill">RUBROS</div>
+      <h2 class="section-title">Experiencia en múltiples industrias</h2>
+      <p class="industries-sub">Desde emprendimientos hasta empresas consolidadas, en más de 15 rubros diferentes.</p>
+    </div>
+    <div class="industry-grid reveal">
+      <div class="industry-card">
+        <div class="industry-card-top">
+          <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+          <span class="industry-badge">6 clientes</span>
+        </div>
+        <h4>Gastronomía</h4>
+        <div class="industry-divider"></div>
+        <p>Melmac FastFood · La Taberna Bar de Pizzas<br>Delicias Veganas · Arrowburgerok<br>Keto Style · Estela Pollería &amp; Fiambrería</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-top">
+          <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2H8L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a2 2 0 001.99 1.77H6"/><path d="M18 10.93a2 2 0 001.15-1.77l.58-3.47a2 2 0 00-1.34-2.23"/><path d="M12 2v20"/><path d="M9 12h6"/></svg>
+          <span class="industry-badge">5 clientes</span>
+        </div>
+        <h4>Indumentaria &amp; Moda</h4>
+        <div class="industry-divider"></div>
+        <p>ZapaTienda · Deportivo Wez Ropa Deportiva<br>Ganesha Leggins · Monarca Boutique<br>JRM Indumentaria Deportiva</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-top">
+          <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7 7-7z"/></svg>
+          <span class="industry-badge">5 clientes</span>
+        </div>
+        <h4>Salud &amp; Bienestar</h4>
+        <div class="industry-divider"></div>
+        <p>Olga Eckerdt Terapia Integral · MyM Salud<br>Vida Saludable · Prehospital Training<br>Cobertura Médica Nacional</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-top">
+          <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span class="industry-badge">6 clientes</span>
+        </div>
+        <h4>Seguros &amp; Finanzas</h4>
+        <div class="industry-divider"></div>
+        <p>Productores Asesores Zabala Ricci<br>Zully Romero PAS · Sebastian Ojea PAS<br>Fabiola Sepúlveda PAS · CJ-Seguros<br>Politeia Consulting</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-top">
+          <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="industry-badge">8 clientes</span>
+        </div>
+        <h4>Hogar &amp; Construcción</h4>
+        <div class="industry-divider"></div>
+        <p>Reparaciones Simples del Hogar<br>Moyano Aberturas · Ferretería Fénix<br>Persianas-Bossi · Refacciones Integrales<br>Colchones Colpazx · Sarah Colchones y Sommiers<br>Almacen de Luces</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-top">
+          <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="industry-badge">4 clientes</span>
+        </div>
+        <h4>Turismo &amp; Alquileres</h4>
+        <div class="industry-divider"></div>
+        <p>Alquiler Casa Carlos Paz Refugio Placentero<br>Casa en Tilisarao<br>El Ciprés Tiny House Bariloche<br>Piscina San Jose</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-top">
+          <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <span class="industry-badge">3 clientes</span>
+        </div>
+        <h4>Educación</h4>
+        <div class="industry-divider"></div>
+        <p>Instituto Ferrer Educación Virtual Argentina<br>Prehospital Training Capacitaciones<br>MV Escuela de Boxeo</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-top">
+          <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="industry-badge">6 clientes</span>
+        </div>
+        <h4>Retail &amp; Comercio</h4>
+        <div class="industry-divider"></div>
+        <p>Electro Fénix · FarmaciaCarhue<br>Droopy Pet Shop · Natural.green<br>Sueños en Madera · RES Metales</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-top">
+          <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          <span class="industry-badge">6 clientes</span>
+        </div>
+        <h4>Entretenimiento &amp; Música</h4>
+        <div class="industry-divider"></div>
+        <p>Flow Belico · ATR Cumbia · ATS Artesur<br>Simuladoras Avellaneda · Vibra Bonito<br>Bingo Mega Sorteo Buenos Aires</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-top">
+          <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span class="industry-badge">3 clientes</span>
+        </div>
+        <h4>Servicios Digitales</h4>
+        <div class="industry-divider"></div>
+        <p>Hosting Cloud Social · Shammah · OBRAS Sociales</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-top">
+          <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="6" r="1"/><line x1="5" y1="18" x2="19" y2="18"/></svg>
+          <span class="industry-badge">1 cliente</span>
+        </div>
+        <h4>Automotriz</h4>
+        <div class="industry-divider"></div>
+        <p>Adrian Cars</p>
+      </div>
+      <div class="industry-card">
+        <div class="industry-card-top">
+          <svg class="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span class="industry-badge">2 clientes</span>
+        </div>
+        <h4>Cosmética &amp; Perfumería</h4>
+        <div class="industry-divider"></div>
+        <p>Millanel Perfumes AnaLuc · Origen Vital</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="proceso">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-pill">CÓMO TRABAJO</div>
+      <h2 class="section-title">Mi proceso para resultados reales</h2>
+      <p class="process-sub">Un proceso claro de principio a fin.</p>
+    </div>
+    <div class="process-timeline">
+      <div class="process-step reveal reveal-d1">
+        <div><div class="process-num">01</div><svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div><h4>Diagnóstico</h4><p>Analizo tu marca, competencia y situación actual en redes.</p></div>
+      </div>
+      <div class="process-step reveal reveal-d1">
+        <div><div class="process-num">02</div><svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <div><h4>Estrategia</h4><p>Diseño un plan personalizado según tus objetivos y rubro.</p></div>
+      </div>
+      <div class="process-step reveal reveal-d2">
+        <div><div class="process-num">03</div><svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3h7a2 2 0 012 2v14a2 2 0 01-2 2h-7"/><polyline points="8 7 3 12 8 17"/><line x1="3" y1="12" x2="15" y2="12"/></svg></div>
+        <div><h4>Creación</h4><p>Desarrollo el contenido, diseño o campaña acordada.</p></div>
+      </div>
+      <div class="process-step reveal reveal-d2">
+        <div><div class="process-num">04</div><svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+        <div><h4>Publicación</h4><p>Ejecuto con los mejores horarios, formatos y segmentación.</p></div>
+      </div>
+      <div class="process-step reveal reveal-d3">
+        <div><div class="process-num">05</div><svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div><h4>Optimización</h4><p>Mido resultados y ajusto para maximizar el impacto.</p></div>
+      </div>
+      <div class="process-step reveal reveal-d3">
+        <div><div class="process-num">06</div><svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div><h4>Reporte</h4><p>Entrego un informe claro con métricas y próximos pasos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics">
+  <div class="metrics-inner">
+    <div class="metric-item reveal">
+      <div class="metric-num">+<span class="counter" data-target="60">0</span></div>
+      <div class="metric-lbl">MARCAS GESTIONADAS</div>
+    </div>
+    <div class="metric-item reveal">
+      <div class="metric-num">+<span class="counter" data-target="152">0</span>%</div>
+      <div class="metric-lbl">AUMENTO EN VENTAS</div>
+    </div>
+    <div class="metric-item reveal">
+      <div class="metric-num">+<span class="counter" data-target="89">0</span>%</div>
+      <div class="metric-lbl">MEJORA EN CONVERSIONES</div>
+    </div>
+    <div class="metric-item reveal">
+      <div class="metric-num">+<span class="counter" data-target="203">0</span>%</div>
+      <div class="metric-lbl">CRECIMIENTO EN ALCANCE</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-pill">LO QUE DICEN</div>
+      <h2 class="section-title">Resultados que hablan por sí solos</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal reveal-d1">
+        <div class="test-quote">"</div>
+        <p class="test-text">Alejandro transformó por completo nuestra presencia en redes. En menos de 3 meses triplicamos el alcance y empezamos a recibir consultas directas todos los días.</p>
+        <div class="test-divider"></div>
+        <p class="test-name">María G.</p>
+        <p class="test-role">Emprendedora / Indumentaria</p>
+      </div>
+      <div class="test-card reveal reveal-d2">
+        <div class="test-quote">"</div>
+        <p class="test-text">Las campañas de Meta Ads superaron todas nuestras expectativas. Vimos retorno positivo desde la primera semana y el seguimiento fue impecable.</p>
+        <div class="test-divider"></div>
+        <p class="test-name">Carlos M.</p>
+        <p class="test-role">Dueño de negocio / Gastronomía</p>
+      </div>
+      <div class="test-card reveal reveal-d3">
+        <div class="test-quote">"</div>
+        <p class="test-text">El diseño de nuestra landing page fue increíble: profesional, rápida y convierte muy bien. Nos diferenciamos completamente de la competencia.</p>
+        <div class="test-divider"></div>
+        <p class="test-name">Laura R.</p>
+        <p class="test-role">Emprendedora / Servicios</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contacto">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-pill">CONTACTO</div>
+      <h2 class="section-title">¿Listo para llevar tu marca al siguiente nivel?</h2>
+      <p class="section-sub">Completá el formulario y te contacto en menos de 24hs.</p>
+    </div>
+    <div class="form-wrap reveal">
+      <form id="contactForm">
+        <div class="frm-row">
+          <div class="frm-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="frm-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+          </div>
+        </div>
+        <div class="frm-row">
+          <div class="frm-group">
+            <label for="tel">WhatsApp / Teléfono</label>
+            <input type="tel" id="tel" name="tel" placeholder="+52 266 506 6606" required>
+          </div>
+          <div class="frm-group">
+            <label for="servicio">¿Qué servicio te interesa?</label>
+            <select id="servicio" name="servicio">
+              <option value="">Seleccioná una opción</option>
+              <option value="web">Página Web</option>
+              <option value="flyers">Flyers &amp; Reels</option>
+              <option value="ads">Campañas Meta Ads</option>
+              <option value="gestion">Gestión completa</option>
+              <option value="todo">Todo</option>
+            </select>
+          </div>
+        </div>
+        <div class="frm-group">
+          <label for="rubro">¿En qué rubro está tu negocio?</label>
+          <input type="text" id="rubro" name="rubro" placeholder="Ej: Gastronomía, Indumentaria, Salud...">
+        </div>
+        <div class="frm-group">
+          <label for="mensaje">Mensaje / ¿Qué necesitás?</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contame sobre tu proyecto..."></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="contact-alt reveal">
+      <div class="contact-btns">
+        <button class="contact-wa-btn" id="waBtn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        SOLICITAR CONSULTA GRATUITA POR WHATSAPP
+      </button>
+      <a href="https://instagram.com/ap.community.manager" target="_blank" rel="noopener" class="contact-alt-ig">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @AP.COMMUNITY.MANAGER
+      </a>
+      </div>
+    </div>
+  </div>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-main">
+      <div class="ft-brand">
+        <svg viewBox="0 0 100 100" fill="none">
+          <rect x="8" y="8" width="84" height="84" rx="6" stroke="rgba(201,168,76,.12)" stroke-width="1" fill="none"/>
+          <text x="50" y="62" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="52" font-weight="700" fill="#fff">AP</text>
+        </svg>
+        <div class="ft-brand-txt">
+          <div class="ft-brand-name">ALEJANDRO PEREZ</div>
+          <div class="ft-brand-role">COMMUNITY MANAGER</div>
+        </div>
+      </div>
+      <div class="ft-links">
+        <a href="#">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#portfolio">Portafolio</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="ft-contact">
+        <div class="ft-phone">2665066606</div>
+        <div class="ft-ig">@ap.community.manager</div>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p>&copy; 2025 Alejandro Perez · Community Manager · Todos los derechos reservados</p>
+      <span class="ft-bot-tag">DISEÑAMOS HOY, LOS RESULTADOS LOS VES MAÑANA.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const clients = [
+  "Cristo Luz y Salvación","Reparaciones Simples del Hogar","Shammah",
+  "Origen Vital","OBRAS Sociales","Millanel Perfumes AnaLuc",
+  "Productores Asesores Zabala Ricci","Moyano Aberturas","Electro Fénix",
+  "Ferretería Fénix","Servicios Juval","ZapaTienda","Flow Belico",
+  "Bingo Mega Sorteo Buenos Aires","Delicias Veganas","Juval Color y Estilo",
+  "Alquiler Casa Carlos Paz","Olga Eckerdt Terapia Integral",
+  "Estela Pollería & Fiambrería","ATS Artesur","FarmaciaCarhue",
+  "Sebastian Ojea PAS","Zully Romero PAS","Tolvas El Gorila",
+  "Casa en Tilisarao","Colchones Colpazx","Deportivo Wez","Piscina San Jose",
+  "JRM Indumentaria Deportiva","Cobertura Médica Nacional","Droopy Pet Shop",
+  "Almacen de Luces","Fabiola Sepúlveda PAS","Politeia Consulting",
+  "Monarca Boutique","Arrowburgerok","Persianas-Bossi","Sueños en Madera",
+  "Natural.green","MV Escuela de Boxeo","La Taberna Bar de Pizzas",
+  "Refacciones Integrales","CJ-Seguros","Keto Style","Melmac FastFood",
+  "Ganesha Leggins","Sarah Colchones y Sommiers","RES Metales",
+  "El Ciprés Tiny House Bariloche","Vida Saludable",
+  "Prehospital Training Capacitaciones","Instituto Ferrer Educación Virtual",
+  "Vibra Bonito","Adrian Cars","ATR Cumbia","Hosting Cloud Social",
+  "MyM Salud","Simuladoras Avellaneda"
+];
+const mi = document.getElementById('marqueeInner');
+function build(l){
+  l.forEach((c,i)=>{
+    if(i>0){const d=document.createElement('span');d.className='marquee-dot';d.textContent='·';mi.appendChild(d)}
+    const s=document.createElement('span');s.className='marquee-item';s.textContent=c;mi.appendChild(s);
+  });
+}
+build(clients);build(clients);build(clients);
+
+const h=document.getElementById('hamburger');
+const mm=document.getElementById('mobileMenu');
+const mc=document.getElementById('mobileClose');
+h.addEventListener('click',()=>{h.classList.toggle('active');mm.classList.toggle('open')});
+mc.addEventListener('click',()=>{h.classList.remove('active');mm.classList.remove('open')});
+document.querySelectorAll('.mobile-menu a').forEach(l=>{l.addEventListener('click',()=>{h.classList.remove('active');mm.classList.remove('open')})});
+
+const re=document.querySelectorAll('.reveal');
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.12});
+re.forEach(el=>ro.observe(el));
+
+const counters=document.querySelectorAll('.counter');
+let done=new Set();
+const co=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting&&!done.has(e.target)){
+      done.add(e.target);
+      const t=parseInt(e.target.dataset.target),dur=2000,st=performance.now();
+      function f(now){
+        const p=Math.min((now-st)/dur,1),v=Math.floor((1-Math.pow(1-p,3))*t);
+        e.target.textContent=v;p<1?requestAnimationFrame(f):e.target.textContent=t;
+      }
+      requestAnimationFrame(f);
+    }
+  });
+},{threshold:.5});
+counters.forEach(c=>co.observe(c));
+
+const pb=document.getElementById('promoBar');
+const nw=document.getElementById('navWrap');
+document.getElementById('promoClose').addEventListener('click',function(){
+  pb.classList.add('hidden');
+  nw.classList.add('promo-hidden');
+});
+
+document.getElementById('waBtn').addEventListener('click',function(){
+  const f=document.getElementById('contactForm');
+  const n=f.querySelector('#nombre').value;
+  const e=f.querySelector('#email').value;
+  const s=f.querySelector('#servicio').value;
+  const r=f.querySelector('#rubro').value;
+  const m=f.querySelector('#mensaje').value;
+  const msg='Hola Alejandro! Me contacto desde tu web.\nNombre: '+n+'\nEmail: '+e+'\nServicio: '+s+'\nRubro: '+r+'\nMensaje: '+m;
+  window.open('https://wa.me/5492665066606?text='+encodeURIComponent(msg),'_blank');
+});
+</script>
+</body>
+</html>

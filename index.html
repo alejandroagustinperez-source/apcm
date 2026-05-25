@@ -27,7 +27,7 @@ body{
 }
 body::before{
   content:'';position:fixed;top:0;left:0;width:100%;height:100%;
-  pointer-events:none;z-index:99990;opacity:.032;
+  pointer-events:none;z-index:1;opacity:.032;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
   background-size:180px 180px;
 }
@@ -1211,33 +1211,63 @@ const co=new IntersectionObserver(entries=>{
 },{threshold:.5});
 counters.forEach(c=>co.observe(c));
 
-// Fix nav top on load and resize
-function fixNavTop(){
+// Set nav top correctly
+function setNavTop(){
   var promo=document.getElementById('promo-bar');
   var nav=document.getElementById('main-nav');
   if(!nav)return;
-  if(!promo||promo.style.display==='none'){
-    nav.style.setProperty('top','0px','important');
-  } else {
-    nav.style.setProperty('top',promo.offsetHeight+'px','important');
-  }
+  var h=promo&&promo.style.display!=='none'?promo.offsetHeight:0;
+  nav.style.setProperty('top',h+'px','important');
 }
-// Run after full page load
-window.addEventListener('load',function(){
-  fixNavTop();
-});
-window.addEventListener('resize',fixNavTop);
-// Also run immediately in case load already fired
-if(document.readyState==='complete'){fixNavTop();}
+window.addEventListener('load',setNavTop);
+window.addEventListener('resize',setNavTop);
+setNavTop();
+
+// Add smooth transition
+setTimeout(function(){
+  var promo=document.getElementById('promo-bar');
+  var nav=document.getElementById('main-nav');
+  if(promo)promo.style.transition='transform 0.35s ease';
+  if(nav)nav.style.transition='transform 0.35s ease';
+},200);
 
 // Close promo
 var promoClose=document.getElementById('promoClose');
 if(promoClose){
   promoClose.addEventListener('click',function(){
-    document.getElementById('promo-bar').style.display='none';
-    document.getElementById('main-nav').style.setProperty('top','0px','important');
+    var promo=document.getElementById('promo-bar');
+    var nav=document.getElementById('main-nav');
+    promo.style.display='none';
+    nav.style.setProperty('top','0px','important');
   });
 }
+
+// Hide on scroll down, show on scroll up
+(function(){
+  var lastScroll=0;
+  var hidden=false;
+  window.addEventListener('scroll',function(){
+    var promo=document.getElementById('promo-bar');
+    var nav=document.getElementById('main-nav');
+    var cur=window.pageYOffset||document.documentElement.scrollTop;
+    var promoH=promo&&promo.style.display!=='none'?promo.offsetHeight:0;
+    var navH=nav?nav.offsetHeight:60;
+    if(cur<=10){
+      if(promo)promo.style.transform='translateY(0)';
+      if(nav)nav.style.transform='translateY(0)';
+      hidden=false;
+    } else if(cur>lastScroll&&!hidden){
+      if(promo&&promo.style.display!=='none')promo.style.transform='translateY(-100%)';
+      if(nav)nav.style.transform='translateY(-'+(promoH+navH)+'px)';
+      hidden=true;
+    } else if(cur<lastScroll&&hidden){
+      if(promo&&promo.style.display!=='none')promo.style.transform='translateY(0)';
+      if(nav)nav.style.transform='translateY(0)';
+      hidden=false;
+    }
+    lastScroll=cur<=0?0:cur;
+  },{passive:true});
+})();
 
 document.getElementById('waBtn').addEventListener('click',function(){
   const f=document.getElementById('contactForm');

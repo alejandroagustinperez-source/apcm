@@ -71,7 +71,7 @@ img{max-width:100%;display:block}
   left:0!important;
   right:0!important;
   width:100%!important;
-  z-index:9998!important;
+  z-index:999998!important;
   background:rgba(7,7,7,.97)!important;
   top:36px!important;
 }
@@ -101,7 +101,7 @@ img{max-width:100%;display:block}
 .hamburger.active span:nth-child(2){opacity:0}
 .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
 .mobile-menu{
-  display:none;position:fixed;inset:0;background:rgba(5,5,5,.98);backdrop-filter:blur(24px);
+  display:none;position:fixed;inset:0;background:rgba(5,5,5,.99);
   z-index:10001;flex-direction:column;align-items:center;justify-content:center;gap:28px;
   opacity:0;pointer-events:none;transition:opacity .4s;
 }
@@ -1143,28 +1143,63 @@ const co=new IntersectionObserver(entries=>{
 },{threshold:.5});
 counters.forEach(c=>co.observe(c));
 
-// Fix nav top on load and resize
-function fixNavTop(){
+// Set nav top on load
+function setNavTop(){
   var promo=document.getElementById('promo-bar');
   var nav=document.getElementById('main-nav');
   if(!nav)return;
-  if(!promo||promo.style.display==='none'){
-    nav.style.top='0px';
-  } else {
-    nav.style.top=promo.getBoundingClientRect().height+'px';
-  }
+  var h=promo&&promo.offsetHeight>0&&promo.style.display!=='none'?promo.offsetHeight:0;
+  nav.style.setProperty('top',h+'px','important');
 }
-fixNavTop();
-window.addEventListener('resize',fixNavTop);
+window.addEventListener('load',setNavTop);
+window.addEventListener('resize',setNavTop);
+setNavTop();
+
+// Smooth transition
+setTimeout(function(){
+  var promo=document.getElementById('promo-bar');
+  var nav=document.getElementById('main-nav');
+  if(promo)promo.style.transition='transform 0.3s ease';
+  if(nav)nav.style.transition='transform 0.3s ease, top 0.3s ease';
+},100);
 
 // Close promo
 var promoClose=document.getElementById('promoClose');
 if(promoClose){
   promoClose.addEventListener('click',function(){
-    document.getElementById('promo-bar').style.display='none';
-    document.getElementById('main-nav').style.top='0px';
+    var promo=document.getElementById('promo-bar');
+    var nav=document.getElementById('main-nav');
+    promo.style.display='none';
+    nav.style.setProperty('top','0px','important');
   });
 }
+
+// Hide on scroll down, show on scroll up
+(function(){
+  var lastScroll=0;
+  var hidden=false;
+  window.addEventListener('scroll',function(){
+    var promo=document.getElementById('promo-bar');
+    var nav=document.getElementById('main-nav');
+    var current=window.pageYOffset||document.documentElement.scrollTop;
+    var promoH=promo&&promo.style.display!=='none'?promo.offsetHeight:0;
+    var navH=nav?nav.offsetHeight:60;
+    if(current<=10){
+      if(promo)promo.style.transform='translateY(0)';
+      if(nav)nav.style.transform='translateY(0)';
+      hidden=false;
+    } else if(current>lastScroll&&!hidden){
+      if(promo&&promo.style.display!=='none')promo.style.transform='translateY(-100%)';
+      if(nav)nav.style.transform='translateY(-'+(promoH+navH)+'px)';
+      hidden=true;
+    } else if(current<lastScroll&&hidden){
+      if(promo&&promo.style.display!=='none')promo.style.transform='translateY(0)';
+      if(nav)nav.style.transform='translateY(0)';
+      hidden=false;
+    }
+    lastScroll=current<=0?0:current;
+  },{passive:true});
+})();
 
 document.getElementById('waBtn').addEventListener('click',function(){
   const f=document.getElementById('contactForm');

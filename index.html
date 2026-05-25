@@ -340,10 +340,11 @@ footer{background:#050505;border-top:1px solid rgba(201,168,76,.08);padding:44px
   .marquee-wrap{-webkit-overflow-scrolling:touch}
 
   /* PROMO BAR */
-  .promo-bar{height:auto;min-height:36px;padding:8px 40px 8px 12px;flex-wrap:wrap;justify-content:center;gap:4px;align-items:center}
-  .promo-text,.promo-body,.promo-small{font-size:10px;letter-spacing:.1em}
+  .promo-bar{height:auto;min-height:36px;padding:6px 36px 6px 10px;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:center;align-items:center;gap:8px}
+  .promo-bar *{font-size:10px!important}
+  .promo-text,.promo-body,.promo-small{white-space:nowrap}
   .promo-price{font-size:13px}
-  .promo-cta{display:inline-flex;padding:4px 12px;font-size:9px;letter-spacing:.1em;height:24px;width:auto!important;min-width:unset;border-radius:2px;margin:0}
+  .promo-btn,.pedilo-ya,[class*="pedilo"],.promo-bar a,.promo-bar button{width:auto!important;max-width:fit-content!important;min-width:unset!important;display:inline-block!important;padding:5px 14px!important;font-size:10px!important;height:auto!important;align-self:center!important}
   .promo-close{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:14px;padding:4px}
   .promo-divider{display:none}
 
@@ -424,6 +425,7 @@ footer{background:#050505;border-top:1px solid rgba(201,168,76,.08);padding:44px
   .navbar{padding:8px 16px}
   .nav-logo-svg{width:28px;height:28px}
   .nav-role{display:none}
+  .promo-text{display:none}
   .marquee-inner{animation-duration:150s}
   .metrics-inner{grid-template-columns:1fr}
   .metric-item+.metric-item{border-left:none;border-top:1px solid rgba(201,168,76,.1)}

@@ -850,6 +850,77 @@ footer{background:#050505;border-top:1px solid rgba(201,168,76,.08);padding:44px
   </div>
 </section>
 
+<!-- DEMO GRATIS -->
+<style>
+.demo-gratis{background:#0A0A0A;border-top:1px solid rgba(201,168,76,.08);overflow:hidden}
+.dg-grid{display:grid;gap:48px;align-items:center;margin-top:10px}
+@media(min-width:900px){.dg-grid{grid-template-columns:1.05fr .95fr}}
+.dg-steps{list-style:none;display:grid;gap:14px;margin-top:30px;padding:0}
+.dg-step{display:flex;gap:18px;align-items:flex-start;background:#111;border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:20px 20px}
+.dg-n{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--g1);display:flex;align-items:center;justify-content:center;font-family:var(--fs);font-weight:700;font-size:20px;color:var(--g1)}
+.dg-step h4{font-family:var(--fn);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--w);margin:0 0 6px}
+.dg-step p{font-family:var(--fn);font-size:14px;color:#AAA;line-height:1.7;margin:0}
+.dg-cta{display:inline-flex;align-items:center;gap:10px;margin-top:28px;background:var(--g1);color:#000;font-family:var(--fn);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:16px 28px;border-radius:3px}
+.dg-note{font-family:var(--fn);font-size:12px;color:#777;margin-top:12px;font-style:italic}
+/* phone mockup */
+.dg-phone-wrap{display:flex;justify-content:center;position:relative}
+.dg-phone-wrap::before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.18),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%)}
+.dg-phone{position:relative;width:270px;height:550px;border-radius:38px;background:#1a1a1a;padding:12px;border:1px solid #333;box-shadow:0 40px 80px rgba(0,0,0,.6)}
+.dg-screen{width:100%;height:100%;border-radius:28px;background:#fafafa;overflow:hidden;position:relative}
+.dg-notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:80px;height:18px;border-radius:10px;background:#1a1a1a;z-index:3}
+.dg-bar{height:8px;border-radius:4px;background:#e3e3e3;margin:6px 0}
+.dg-hero{height:200px;background:linear-gradient(135deg,#1c1a14,#3a3220);padding:44px 18px 0;position:relative}
+.dg-hero .t1{height:12px;width:70%;background:#C9A84C;border-radius:6px;margin-bottom:10px;animation:dgPulse 2.4s infinite}
+.dg-hero .t2{height:10px;width:85%;background:rgba(255,255,255,.75);border-radius:6px;margin-bottom:8px}
+.dg-hero .t3{height:10px;width:55%;background:rgba(255,255,255,.5);border-radius:6px}
+.dg-hero .btn{position:absolute;left:18px;bottom:22px;width:120px;height:30px;border-radius:15px;background:#25d366;display:flex;align-items:center;justify-content:center;font:700 10px Montserrat,sans-serif;color:#fff;letter-spacing:.05em}
+.dg-body{padding:14px 16px}
+.dg-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.dg-cards div{height:70px;border-radius:10px;background:linear-gradient(135deg,#ece7da,#d9d1bd)}
+.dg-stars{font-size:12px;color:#e6b422;letter-spacing:2px;margin-top:6px}
+.dg-tag{position:absolute;right:-30px;top:90px;background:#111;border:1px solid var(--g1);color:var(--g3);font-family:var(--fn);font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:10px 14px;border-radius:4px;z-index:4;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.dg-tag2{position:absolute;left:-36px;bottom:110px;background:#111;border:1px solid rgba(201,168,76,.4);color:#ddd;font-family:var(--fn);font-size:11px;padding:10px 14px;border-radius:4px;z-index:4;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.dg-tag2 b{color:var(--g1)}
+@keyframes dgPulse{50%{opacity:.55}}
+@media(max-width:480px){.dg-tag{right:-6px}.dg-tag2{left:-6px}}
+</style>
+<section class="demo-gratis" id="demo-gratis">
+  <div class="section-inner">
+    <div class="dg-grid">
+      <div class="reveal">
+        <div class="section-pill">DEMO GRATIS</div>
+        <h2 class="section-title">Así armamos tu <span>demo gratis</span></h2>
+        <p class="section-sub">Antes de que pagues un peso, ves cómo quedaría la página de tu negocio. Sin compromiso y sin que tengas que hacer nada técnico.</p>
+        <ol class="dg-steps">
+          <li class="dg-step"><div class="dg-n">1</div><div><h4>Nos escribís</h4><p>Un mensaje por WhatsApp alcanza. Si tenés Instagram o ficha en Google, mejor: de ahí tomamos tus fotos, horarios y opiniones.</p></div></li>
+          <li class="dg-step"><div class="dg-n">2</div><div><h4>Armamos tu demo</h4><p>En 48 hs diseñamos una versión real de tu página, con tu marca, tus colores y un botón directo a tu WhatsApp.</p></div></li>
+          <li class="dg-step"><div class="dg-n">3</div><div><h4>La ves en tu celular</h4><p>Te mandamos el link para que la recorras tranquilo. Ajustamos lo que quieras: textos, fotos, servicios.</p></div></li>
+          <li class="dg-step"><div class="dg-n">4</div><div><h4>Si te gusta, la publicamos</h4><p>En 5 días queda online con tu dominio. Si no te convence, no pasa nada.</p></div></li>
+        </ol>
+        <a class="dg-cta" href="https://wa.me/5492665066606?text=Hola%20Alejandro!%20Quiero%20mi%20demo%20gratis%20%F0%9F%9A%80" target="_blank" rel="noopener">Quiero mi demo gratis →</a>
+        <p class="dg-note">Trabajamos 100% a distancia con negocios de todo el país.</p>
+      </div>
+      <div class="dg-phone-wrap reveal reveal-d2" aria-hidden="true">
+        <div class="dg-phone">
+          <div class="dg-tag">Tu demo · 48 hs</div>
+          <div class="dg-tag2"><b>✓</b> Botón directo a WhatsApp</div>
+          <div class="dg-screen">
+            <div class="dg-notch"></div>
+            <div class="dg-hero"><div class="t1"></div><div class="t2"></div><div class="t3"></div><div class="btn">PEDIR TURNO</div></div>
+            <div class="dg-body">
+              <div class="dg-bar" style="width:45%;height:10px;background:#cfc5aa"></div>
+              <div class="dg-cards"><div></div><div></div><div></div><div></div></div>
+              <div class="dg-bar" style="width:60%"></div><div class="dg-bar" style="width:80%"></div>
+              <div class="dg-stars">★★★★★</div>
+              <div class="dg-bar" style="width:70%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROMO BLOCK 2 -->
 <section class="promo2">
   <div class="promo2-inner">

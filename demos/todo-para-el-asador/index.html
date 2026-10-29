@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Todo Para El Asador MDQ · Fogones, carretas y accesorios para el asador</title>
+<meta name="description" content="Todo Para El Asador MDQ: fogones, carretas gourmet, jaulas asadoras, mecheros, paelleras y accesorios para el quincho. Moreno 5237, Mar del Plata. Envíos a domicilio.">
+<link rel="icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#15100e;--bg2:#1f1714;--card:#261c18;--ink:#f3ead8;--mute:#b9ab95;--fire:#e8792b;--fire2:#ff9b45;--wine:#5c1e1b;--line:rgba(232,121,43,.22)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Work Sans",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.disp{font-family:"Big Shoulders Stencil Display",Impact,sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.02em;line-height:.92}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--fire)}
+.f{color:var(--fire)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-f{background:var(--fire);color:#1a0e08;box-shadow:0 12px 34px rgba(232,121,43,.3)}
+.btn-f:hover{background:var(--fire2)}
+.btn-o{border:1.5px solid rgba(243,234,216,.3);color:var(--ink)}
+.btn svg{width:22px;height:22px}
+.ribbon{background:var(--fire);color:#1a0e08;text-align:center;font-size:13px;padding:8px 14px;font-weight:600}
+nav{position:sticky;top:0;z-index:20;background:rgba(21,16,14,.9);backdrop-filter:blur(10px);border-bottom:1px solid #2c211c}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:50px;height:50px;border-radius:50%}
+.brand b{font-family:"Big Shoulders Stencil Display";font-weight:900;font-size:22px;letter-spacing:.04em;text-transform:uppercase;line-height:1}
+.brand small{display:block;font-size:11px;letter-spacing:.2em;color:var(--fire);font-weight:600;text-transform:uppercase}
+.nav-links{display:none;gap:28px;font-weight:600;font-size:14px;color:#d8ccb6}
+.nav-links a:hover{color:var(--fire)}
+.nav-cta{height:44px;padding:0 18px;font-size:14px}
+@media(min-width:900px){.nav-links{display:flex}}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid #2c211c}
+.hero-bg{position:absolute;inset:0;background:url(img/fogon-1m.jpg) center/cover;filter:saturate(1.05)}
+.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(21,16,14,.97) 0%,rgba(21,16,14,.86) 45%,rgba(21,16,14,.35) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 35%)}
+.hero .wrap{position:relative;padding:90px 20px 100px;display:grid;gap:40px;align-items:center}
+.hero h1{font-size:clamp(52px,9vw,112px);margin:16px 0 20px}
+.hero p.lead{font-size:18px;color:#ddd0b9;max-width:540px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-logo{display:none;width:300px;justify-self:end;border-radius:50%;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 8px rgba(232,121,43,.18)}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.3fr .7fr}.hero-logo{display:block}}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chip{font-size:13px;font-weight:600;padding:7px 14px;border:1px solid var(--line);border-radius:999px;color:#e8dcc6;background:rgba(38,28,24,.6)}
+
+section{padding:90px 0}
+.head{max-width:720px;margin-bottom:44px}
+.head h2{font-size:clamp(40px,6vw,68px);margin:12px 0 14px}
+.head p{color:var(--mute);font-size:17px}
+
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+.filters button{font:inherit;font-weight:600;font-size:14px;padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;transition:.2s}
+.filters button.on,.filters button:hover{background:var(--fire);color:#1a0e08;border-color:var(--fire)}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.prod{background:var(--card);border:1px solid #33261f;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.prod:hover{transform:translateY(-4px);border-color:var(--line)}
+.prod .ph{aspect-ratio:1/1;overflow:hidden;background:#000;position:relative}
+.prod .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.prod:hover .ph img{transform:scale(1.05)}
+.tag{position:absolute;top:12px;left:12px;background:rgba(21,16,14,.85);color:var(--fire);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
+.prod .bd{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.prod h3{font-size:19px;font-weight:700;line-height:1.25}
+.prod p{font-size:14px;color:var(--mute);flex:1}
+.price{font-weight:700;font-size:20px;color:var(--ink)}
+.price s{font-weight:500;font-size:14px;color:#8d7f6b;margin-left:8px}
+.price.c{font-size:14px;color:var(--fire);font-weight:600}
+.ask{margin-top:6px;display:flex;align-items:center;justify-content:center;gap:8px;height:46px;border-radius:12px;background:#1e9e57;color:#fff;font-weight:700;font-size:14px;transition:background .2s}
+.ask:hover{background:#22b863}
+.ask svg{width:19px;height:19px}
+.prod.hide{display:none}
+.more{margin-top:40px;padding:26px;border:1px dashed var(--line);border-radius:18px;color:var(--mute)}
+.more b{color:var(--ink)}
+.more .chips{margin-top:14px}
+
+.alt{background:var(--bg2);border-top:1px solid #2c211c;border-bottom:1px solid #2c211c}
+.split{display:grid;gap:40px;align-items:center}
+@media(min-width:900px){.split{grid-template-columns:1fr 1fr}}
+.split img{border-radius:20px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.list{list-style:none;display:grid;gap:14px;margin:24px 0 30px}
+.list li{display:flex;gap:12px;align-items:flex-start;color:#ddd0b9}
+.list li:before{content:"🔥";flex:none}
+
+.why{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.why div{background:var(--card);border:1px solid #33261f;border-radius:18px;padding:26px}
+.why .ic{font-size:30px}
+.why h3{font-size:19px;margin:12px 0 6px}
+.why p{color:var(--mute);font-size:15px}
+
+.contact{display:grid;gap:30px}
+@media(min-width:900px){.contact{grid-template-columns:.9fr 1.1fr}}
+.cbox{background:var(--card);border:1px solid #33261f;border-radius:20px;padding:30px;display:grid;gap:18px}
+.cbox .row{display:flex;gap:14px}
+.cbox .row span{font-size:22px}
+.cbox .row b{display:block}
+.cbox .row small{color:var(--mute);font-size:14px}
+.map{border-radius:20px;overflow:hidden;min-height:360px;border:1px solid #33261f}
+.map iframe{width:100%;height:100%;min-height:360px;border:0;filter:grayscale(.3) contrast(1.05)}
+
+.cta{text-align:center;background:radial-gradient(ellipse at center,rgba(232,121,43,.22),transparent 65%),var(--wine);border-top:1px solid #7a2c26}
+.cta h2{font-size:clamp(42px,7vw,80px);margin-bottom:16px}
+.cta p{color:#ead9c3;font-size:18px;margin-bottom:30px}
+footer{padding:36px 0;color:#8d7f6b;font-size:13px;text-align:center;border-top:1px solid #2c211c}
+footer a{color:var(--fire)}
+.fab{position:fixed;right:18px;bottom:18px;z-index:30;width:62px;height:62px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.45)}
+.fab svg{width:32px;height:32px}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<div class="ribbon">🔥 Vista previa de la página de Todo Para El Asador MDQ · Demo creada por AP Community Manager</div>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#"><img src="img/logo.jpg" alt="Logo Todo Para El Asador MDQ"><div><b>Todo Para El Asador</b><small>Mar del Plata</small></div></a>
+    <div class="nav-links"><a href="#productos">Productos</a><a href="#medida">A medida</a><a href="#eventos">Eventos</a><a href="#contacto">Contacto</a></div>
+    <a class="btn btn-f nav-cta" href="https://wa.me/5492234545354?text=Hola!%20Vi%20la%20web%20y%20quiero%20hacer%20una%20consulta%20%F0%9F%94%A5" target="_blank" rel="noopener">Consultar</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">La Casa del Asador · Mar del Plata</span>
+      <h1 class="disp">Todo para<br>el asador<br><span class="f">argentino</span></h1>
+      <p class="lead">Fogones, carretas gourmet, jaulas asadoras, mecheros, paelleras y accesorios para tu quincho y tu jardín. Fabricados con hierro de verdad, para durar toda la vida.</p>
+      <div class="ctas">
+        <a class="btn btn-f" href="#productos">Ver productos</a>
+        <a class="btn btn-o" href="https://wa.me/5492234545354?text=Hola!%20Quiero%20hacer%20un%20pedido%20%F0%9F%94%A5" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.8l5.1-1.3A9.7 9.7 0 1 0 12 2.2zm5.6 13.7c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>Pedir por WhatsApp</a>
+      </div>
+      <div class="chips"><span class="chip">🚚 Envíos a domicilio</span><span class="chip">🛠️ Trabajos a medida</span><span class="chip">🎉 Alquiler para eventos</span></div>
+    </div>
+    <img class="hero-logo" src="img/logo.jpg" alt="Todo Para El Asador MDQ">
+  </div>
+</header>
+
+<section id="productos">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Catálogo</span>
+      <h2 class="disp">Elegí tu <span class="f">fuego</span></h2>
+      <p>Tocá "Consultar" en cualquier producto y te respondemos por WhatsApp con precio, medidas y envío.</p>
+    </div>
+    <div class="filters reveal">
+      <button class="on" data-f="all">Todos</button>
+      <button data-f="fogones">Fogones</button>
+      <button data-f="asadores">Carretas y asadores</button>
+      <button data-f="discos">Mecheros y paelleras</button>
+      <button data-f="accesorios">Accesorios</button>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="more reveal">
+      <b>¿Buscás otra cosa?</b> También hacemos:
+      <div class="chips"><span class="chip">Parrillas móviles reforzadas</span><span class="chip">Parrillas fijas en ángulo V</span><span class="chip">Módulo asador 1 × 1 m</span><span class="chip">Planchas bifeteras</span><span class="chip">Tablas de asado</span><span class="chip">Canastos guarda leña</span><span class="chip">Leñeros circulares</span><span class="chip">Jaulas brocheteras</span><span class="chip">Sartenes con cabo de lapacho</span><span class="chip">Juegos de trinchar</span><span class="chip">Garras de oso</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="medida">
+  <div class="wrap split">
+    <img class="reveal" src="img/piezas-unicas.jpg" alt="Fogón pieza única">
+    <div class="reveal">
+      <span class="eyebrow">Hecho a medida</span>
+      <h2 class="disp" style="font-size:clamp(40px,6vw,64px);margin:12px 0 14px">Piezas <span class="f">únicas</span></h2>
+      <p style="color:var(--mute);font-size:17px">¿Tenés una idea para tu quincho? La fabricamos. Fogones calados con el diseño que quieras, mesas fogón de 1,20 o 1,40 m, carretas gourmet y módulos asadores pensados para tu espacio.</p>
+      <ul class="list"><li>Diseños personalizados en hierro y chapa</li><li>Terminación color óxido o negra</li><li>Asesoramiento para elegir medida y modelo</li></ul>
+      <a class="btn btn-f" href="https://wa.me/5492234545354?text=Hola!%20Quiero%20consultar%20por%20un%20trabajo%20a%20medida%20%F0%9F%9B%A0%EF%B8%8F" target="_blank" rel="noopener">Contanos tu idea</a>
+    </div>
+  </div>
+</section>
+
+<section id="eventos">
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="eyebrow">Alquiler</span>
+      <h2 class="disp" style="font-size:clamp(40px,6vw,64px);margin:12px 0 14px">Tu evento, <span class="f">a la parrilla</span></h2>
+      <p style="color:var(--mute);font-size:17px">Alquilamos fogones, asadores, carretas, fogoneros y mobiliario para cumpleaños, casamientos, eventos de empresa y fiestas al aire libre.</p>
+      <ul class="list"><li>Equipamiento completo para asados grandes</li><li>Ideal para jardines, quintas y salones</li><li>Consultá disponibilidad por fecha</li></ul>
+      <a class="btn btn-f" href="https://wa.me/5492234545354?text=Hola!%20Quiero%20consultar%20por%20alquiler%20para%20un%20evento%20%F0%9F%8E%89" target="_blank" rel="noopener">Consultar fecha</a>
+    </div>
+    <img class="reveal" src="img/eventos.jpg" alt="Alquiler de fogones y asadores para eventos">
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="head reveal"><span class="eyebrow">Por qué elegirnos</span><h2 class="disp">Hierro que <span class="f">dura</span></h2></div>
+    <div class="why">
+      <div class="reveal"><span class="ic">🔩</span><h3>Fabricación propia</h3><p>Hacemos cada pieza con materiales reforzados, pensados para el fuego de todos los fines de semana.</p></div>
+      <div class="reveal"><span class="ic">🚚</span><h3>Envíos a domicilio</h3><p>Te lo llevamos a tu casa. Consultanos también por envíos a otras ciudades.</p></div>
+      <div class="reveal"><span class="ic">💬</span><h3>Atención directa</h3><p>Hablás con nosotros por WhatsApp: precios, medidas y fotos reales al instante.</p></div>
+      <div class="reveal"><span class="ic">🏠</span><h3>Local a la calle</h3><p>Vení a ver los productos en Moreno 5237. "La Casa del Asador".</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <div class="head reveal"><span class="eyebrow">Visitanos</span><h2 class="disp">La Casa del <span class="f">Asador</span></h2></div>
+    <div class="contact">
+      <div class="cbox reveal">
+        <div class="row"><span>📍</span><div><b>Moreno 5237</b><small>Mar del Plata, Buenos Aires</small></div></div>
+        <div class="row"><span>💬</span><div><b>WhatsApp 223 454-5354</b><small>Ventas, pedidos y envíos</small></div></div>
+        <div class="row"><span>📸</span><div><b>Todo Para El Asador MDQ</b><small>Seguinos en Instagram</small></div></div>
+        <div class="row"><span>🕒</span><div><b>Horarios</b><small>Consultá horarios de atención por WhatsApp</small></div></div>
+        <a class="btn btn-f" style="width:100%" href="https://wa.me/5492234545354?text=Hola!%20Quiero%20hacer%20una%20consulta%20%F0%9F%94%A5" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+      </div>
+      <div class="map reveal"><iframe loading="lazy" title="Mapa Todo Para El Asador MDQ" src="https://maps.google.com/maps?q=Moreno%205237%2C%20Mar%20del%20Plata%2C%20Buenos%20Aires&z=16&output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap reveal">
+    <h2 class="disp">Prendé el <span class="f">fuego</span></h2>
+    <p>Pedí tu fogón, carreta o accesorio hoy y empezá a disfrutar el mejor asado.</p>
+    <a class="btn btn-f" href="https://wa.me/5492234545354?text=Hola!%20Quiero%20hacer%20un%20pedido%20%F0%9F%94%A5" target="_blank" rel="noopener">Hacer mi pedido</a>
+  </div>
+</section>
+
+<footer>© 2026 Todo Para El Asador MDQ · Moreno 5237, Mar del Plata · Demo creada por <a href="https://ap-cm.vercel.app" target="_blank" rel="noopener">AP Community Manager</a></footer>
+
+<a class="fab" href="https://wa.me/5492234545354?text=Hola!%20Vi%20la%20web%20y%20quiero%20hacer%20una%20consulta%20%F0%9F%94%A5" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.8l5.1-1.3A9.7 9.7 0 1 0 12 2.2zm5.6 13.7c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg></a>
+
+<script>
+const WA='5492234545354';
+const P=[
+ {c:'fogones',t:'Fogón',n:'Fogón de 1 m',d:'Fogón color óxido de 1 metro de diámetro, con parrilla y asador regulable.',img:'fogon-1m'},
+ {c:'fogones',t:'Fogón',n:'Fogón completo de 60 cm',d:'Con parrilla medialuna, asador chico con sistema de prensa y criquera porta asador de 4 posiciones.',img:'fogon-60'},
+ {c:'fogones',t:'Decorativo',n:'Fogón calado decorativo',d:'Fogones calados con diferentes diseños. Iluminan y calientan tu jardín.',img:'calados',p:'$ 450.000',o:'$ 485.000'},
+ {c:'fogones',t:'Mesa',n:'Mesa fogón',d:'Mesa fogón de 1,20 o 1,40 m con parrilla central y guarda leña.',img:'mesa-fogon'},
+ {c:'asadores',t:'Gourmet',n:'Carreta gourmet de 1 m',d:'Carreta completa con ruedas estilo escandinavo y cruz asadora.',img:'carreta'},
+ {c:'asadores',t:'Asador',n:'Jaulas asadoras',d:'Para colgar vacíos, costillares y lechones alrededor del fuego.',img:'jaulas'},
+ {c:'asadores',t:'Único',n:'Piezas únicas',d:'Fogones y asadores de diseño especial, fabricados a pedido.',img:'piezas-unicas'},
+ {c:'discos',t:'Mecheros',n:'Mecheros y quemadores',d:'Para discos de arado y paelleras, de distintas medidas y alturas.',img:'mecheros'},
+ {c:'discos',t:'Paelleras',n:'Paelleras estampadas con asas',d:'Paelleras de hierro estampado con asas, en varios tamaños.',img:'paelleras'},
+ {c:'accesorios',t:'Quincho',n:'Accesorios para el asador',d:'Garras de oso, provoleteras, juegos de trinchar, smashers de fundición, sartenes, cuchillos y kits parrilleros.',img:'accesorios'}
+];
+const ic='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.8l5.1-1.3A9.7 9.7 0 1 0 12 2.2zm5.6 13.7c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>';
+const g=document.getElementById('grid');
+g.innerHTML=P.map(p=>`<article class="prod reveal" data-c="${p.c}"><div class="ph"><img src="img/${p.img}.jpg" alt="${p.n}" loading="lazy"><span class="tag">${p.t}</span></div><div class="bd"><h3>${p.n}</h3><p>${p.d}</p>${p.p?`<div class="price">${p.p}<s>${p.o}</s></div>`:'<div class="price c">Consultá precio y medidas</div>'}<a class="ask" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent('Hola! Quiero consultar por: '+p.n+' 🔥')}">${ic}Consultar</a></div></article>`).join('');
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');const f=b.dataset.f;document.querySelectorAll('.prod').forEach(el=>el.classList.toggle('hide',f!=='all'&&el.dataset.c!==f))});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

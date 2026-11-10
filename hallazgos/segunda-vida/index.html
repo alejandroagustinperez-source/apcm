@@ -32,14 +32,15 @@ section{padding:84px 0;position:relative}
 .hero h1{font-size:clamp(50px,10.5vw,96px);margin:14px 0 18px}
 .hero p{color:#e7e0d1;max-width:540px;margin-bottom:26px}
 .proof{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-size:13px;color:var(--mut)}.proof b{color:var(--tx)}
-.drawer{position:relative;height:360px;max-width:420px;width:100%;margin:auto}
-.ph-old,.ph-new{position:absolute;width:160px;height:320px;border-radius:26px;border:6px solid #1c1a15;background:#0b0b0b}
-.ph-old{left:6%;top:30px;transform:rotate(-14deg);filter:grayscale(1) brightness(.55);box-shadow:0 20px 50px #000}
+.drawer{position:relative;height:400px;max-width:380px;width:100%;margin:auto}
+.ph-old,.ph-new{position:absolute;width:170px;height:350px;border-radius:28px;border:6px solid #1c1a15;background:#0b0b0b;overflow:hidden}
+.ph-old{left:0;top:40px;transform:rotate(-8deg) scale(.9);filter:grayscale(1) brightness(.55);box-shadow:0 20px 50px #000}
 .ph-old:after{content:"";position:absolute;inset:14px;background:repeating-linear-gradient(135deg,#222 0 2px,transparent 2px 9px);border-radius:12px;opacity:.5}
-.ph-new{right:4%;top:0;transform:rotate(6deg);box-shadow:0 30px 80px #c9a84c33,0 0 0 1px var(--line);animation:fl 6s ease-in-out infinite}
-@keyframes fl{50%{transform:rotate(6deg) translateY(-12px)}}
-.ph-new .sc{position:absolute;inset:8px;border-radius:16px;background:#0D1412;padding:16px 12px;display:flex;flex-direction:column;gap:8px}
-.arrow{position:absolute;left:44%;top:150px;color:var(--g2);font:500 54px "Cormorant Garamond",serif}
+.ph-new{right:14px;top:10px;transform:rotate(2deg);box-shadow:0 30px 80px #c9a84c33,0 0 0 1px var(--line);animation:fl 6s ease-in-out infinite}
+@keyframes fl{50%{transform:rotate(2deg) translateY(-10px)}}
+.ph-new .sc{position:absolute;inset:6px;border-radius:20px;background:#0D1412;padding:18px 10px 10px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+.ph-new .chips{gap:4px}.ph-new .chips div{padding:6px 5px;font-size:8px}.ph-new .chips b{font-size:12px}
+.arrow{position:absolute;left:42%;top:170px;z-index:2;color:var(--g2);font:500 54px "Cormorant Garamond",serif}
 
 /* Simulador */
 .sim{display:grid;gap:34px;margin-top:40px;align-items:center}
@@ -53,8 +54,8 @@ section{padding:84px 0;position:relative}
 .desc li:before{content:"";position:absolute;left:0;top:14px;width:12px;height:2px;background:var(--g2)}
 .phone{width:280px;height:560px;margin:auto;border-radius:40px;border:10px solid #1c1a15;background:#000;position:relative;box-shadow:0 40px 100px #c9a84c22,0 0 0 1px var(--line)}
 .phone:before{content:"";position:absolute;top:10px;left:50%;width:70px;height:6px;margin-left:-35px;border-radius:6px;background:#2a2720;z-index:3}
-.screen{position:absolute;inset:6px;border-radius:28px;overflow:hidden}
-.mode{position:absolute;inset:0;padding:30px 16px 18px;display:flex;flex-direction:column;gap:10px;opacity:0;transform:scale(.97);transition:opacity .45s,transform .45s;pointer-events:none}
+.screen{position:absolute;inset:6px;border-radius:28px;overflow:hidden;background:#000}
+.mode{position:absolute;inset:0;overflow:hidden;padding:30px 16px 18px;display:flex;flex-direction:column;gap:10px;opacity:0;transform:scale(.97);transition:opacity .45s,transform .45s;pointer-events:none}
 .mode.on{opacity:1;transform:none}
 .m-t{font:700 19px Montserrat,sans-serif;color:#fff}
 .m-s{font-size:11px;color:#9BB0A9}
@@ -65,11 +66,11 @@ section{padding:84px 0;position:relative}
 .sq div{border-radius:16px;padding:14px 10px;font-weight:700;font-size:14px;text-align:center}
 .bar{height:6px;border-radius:6px;background:#26332F;overflow:hidden}.bar i{display:block;height:100%;background:#3CCB9F}
 .games{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-.games div{aspect-ratio:1;border-radius:10px;display:grid;place-items:center;font:700 10px Montserrat;color:#fff}
+.games div{aspect-ratio:1;border-radius:10px;display:grid;place-items:center;font:700 9px Montserrat,system-ui,sans-serif;letter-spacing:.02em;color:#fff;text-align:center;padding:2px;overflow:hidden}
 .cam{flex:1;border-radius:14px;background:linear-gradient(160deg,#2b2f33,#14171a);position:relative;overflow:hidden}
 .cam:before{content:"";position:absolute;left:18%;bottom:0;width:36%;height:55%;background:#1e2226;border-radius:6px 6px 0 0}
 .cam:after{content:"";position:absolute;right:16%;top:28%;width:22%;height:36%;border:2px solid #ff6b5e;border-radius:4px}
-.live{position:absolute;top:10px;left:10px;z-index:2;background:#ff3b30;color:#fff;font:700 9px Montserrat;padding:3px 7px;border-radius:4px;letter-spacing:.1em;animation:bl 1.4s infinite}
+.live{position:absolute;top:10px;left:10px;z-index:2;background:#ff3b30;color:#fff;font:700 9px Montserrat,system-ui,sans-serif;padding:3px 7px;border-radius:4px;letter-spacing:.1em;animation:bl 1.4s infinite}
 @keyframes bl{50%{opacity:.4}}
 .menu-row{display:flex;justify-content:space-between;border-bottom:1px dashed #e8c96a55;padding:8px 2px;font-size:14px;color:#f4efe4}.menu-row b{color:#E8C96A}
 
@@ -129,8 +130,8 @@ footer{padding:34px 0 110px;font-size:13px;color:var(--mut);border-top:1px solid
     <div class="ph-old"></div>
     <div class="arrow">→</div>
     <div class="ph-new"><div class="sc">
-      <div class="m-s">Modo Conductor activo</div>
-      <div class="m-t" style="font-size:15px">Listo para trabajar</div>
+      <div class="m-s" style="font-size:9px">Modo Conductor activo</div>
+      <div class="m-t" style="font-size:14px">Listo para trabajar</div>
       <div class="chips"><div>Temp.<b>31°</b></div><div>RAM<b>1,9</b></div><div>Bat.<b>84%</b></div></div>
       <div class="big" style="background:#3CCB9F;color:#062219;font-size:12px">Abrir app de viajes</div>
       <div class="big" style="background:#16201D;color:#fff;font-size:11px">Hoy<br><span style="font-size:17px">$ 57.040 neto</span></div>
@@ -173,14 +174,14 @@ footer{padding:34px 0 110px;font-size:13px;color:var(--mut);border-top:1px solid
         <div class="m-s" style="color:#B9A8E8">Control conectado</div><div class="m-t">Consola Retro</div>
         <div class="games">
           <div style="background:#D6453D">AVENTURA</div><div style="background:#3A6FD6">CARRERA</div><div style="background:#3AA266">PUZZLE</div>
-          <div style="background:#E9B635;color:#2A1D06">PLATAFORMA</div><div style="background:#7A6FD6">NAVES</div><div style="background:#E07A2E">FÚTBOL</div>
+          <div style="background:#E9B635;color:#2A1D06">SALTOS</div><div style="background:#7A6FD6">NAVES</div><div style="background:#E07A2E">FÚTBOL</div>
         </div>
         <div class="big" style="background:#2A2145;color:#fff;font-size:12px">Juegos libres y retro<br><span style="color:#B9A8E8;font-weight:500">Sin internet · sin publicidad</span></div>
         <div class="big" style="background:#E9B635;color:#2A1D06;text-align:center">▶ Jugar</div>
       </div>
       <div class="mode" style="background:#0E1726">
         <div class="m-s" style="color:#9FB4D8">Celular de Tomi</div><div class="m-t">Hoy te quedan</div>
-        <div style="font:700 40px Montserrat;color:#7AA7FF">1 h 20 min</div>
+        <div style="font:700 38px Montserrat,system-ui,sans-serif;color:#7AA7FF">1 h 20 min</div>
         <div class="bar" style="background:#1E2B44"><i style="width:45%;background:#7AA7FF"></i></div>
         <div class="sq"><div style="background:#1A2740;color:#fff">Llamar a mamá</div><div style="background:#1A2740;color:#fff">Cámara</div><div style="background:#1A2740;color:#fff">Juegos</div><div style="background:#1A2740;color:#fff">Música</div></div>
         <div class="big" style="background:#1A2740;color:#9FB4D8;font-size:12px">Sin redes sociales · sin compras · sin anuncios</div>
